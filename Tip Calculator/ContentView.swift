@@ -44,9 +44,12 @@ struct ContentView: View {
                             Text("\($0) people")
                         }
                     }
+                    .foregroundColor(.primary)
                 } header: {
                     Text("Bill amount")
+                        .foregroundColor(.primary)
                 }
+                .foregroundColor(Color(red: 0, green: 139/255, blue: 0, opacity: 1))
                 
                 Section {
                     Picker ("Tip percentage", selection: $tipPercentage) {
@@ -55,6 +58,7 @@ struct ContentView: View {
                         }
                         .pickerStyle(.segmented)
                     }
+                    .foregroundColor(.blue)
                 } header: {
                     Text("How much tip do you want to leave?")
                 }
@@ -64,14 +68,17 @@ struct ContentView: View {
                 } header: {
                     Text("payment per person")
                 }
+                .foregroundColor(Color(red: 0, green: 0, blue: 139/255, opacity: 1))
                 
                 Section {
                     Text(totalPerPerson * Double(numberOfPeople + 2), format: currency)
                 } header: {
                     Text("Total bill")
                 }
+                .foregroundColor(Color(red: 139/255, green: 0, blue: 0, opacity: 1))
             }
             .navigationTitle("Tip Calculator")
+            .foregroundColor(.primary)
             .toolbar {
                 ToolbarItemGroup(placement: .keyboard) {
                     Spacer()
